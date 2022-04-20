@@ -9,15 +9,15 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useNavigate } from "react-router-dom";
+import { CoinState } from "../CoinContext";
 
 const Header = () => {
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const { currency, setCurrency } = CoinState();
+  const handleChange = (e) => {
+    setCurrency(e.target.value);
   };
-
   let navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -52,7 +52,7 @@ const Header = () => {
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={age}
+                value={currency}
                 label="Currency"
                 onChange={handleChange}
               >

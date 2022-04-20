@@ -1,8 +1,14 @@
-import { Box } from "@mui/material";
 import React from "react";
+import Banner from "../Components/Banner/Banner";
+import CoinsTable from "../Components/CoinsTable";
 
 const HomePage = () => {
-  return <Box>HomePage</Box>;
+  return (
+    <>
+      <Banner />
+      <CoinsTable />
+    </>
+  );
 };
 
 export default HomePage;
